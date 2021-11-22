@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace carserveprime.console
 {
@@ -6,22 +7,62 @@ namespace carserveprime.console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Carserveprime");
-            Console.WriteLine("If you are here to schedule a service appointment please enter yes(y) else no(n)");
-            string response = Console.ReadLine();
-            if (response.ToLower() != "y")
+            DateTime proposedDatetime = scheduleAppointment();
+            Console.WriteLine("Thank you for providing the information, your appointment information can be fixed as below");
+            Console.WriteLine(proposedDatetime);
+            Console.WriteLine("Press (Y)es or (N)o");
+            string finalConfirmation = Console.ReadLine();
+            if (finalConfirmation.ToLower() == "y")
             {
-                Console.WriteLine("For any other assistance call toll free number");
-                return;
+                Console.WriteLine("Appointment is confirmed on "+proposedDatetime);
+                //save the appointment                
             }
-            Console.WriteLine("Can we have your car registration number");
+        }
+
+        private static DateTime scheduleAppointment()
+        {
+            DateTime requestedDatetime;
+            Console.WriteLine("Welcome to Car Serve Prime");
+            Console.WriteLine("Can we have car registration number");
             string regnNumber = Console.ReadLine();
-            Console.WriteLine("Can we have your preferred date(dd) of appointment for current month");
-            string dateOfAppointment = Console.ReadLine();
-            Console.WriteLine("What time would you prefer between (12 PM-5 PM)");
-            string timeOfServiceDay = Console.ReadLine();
-            DateTime dateOfService=new DateTime(DateTime.Today.Year,DateTime.Today.Month,int.Parse(dateOfAppointment));
-            Console.WriteLine("Thank you for providing the information, your appointment information fixed as below");
-            Console.WriteLine(dateOfService.ToShortDateString()+" "+timeOfServiceDay+" PM");        }
+            regnNumber = Regex.Replace(regnNumber, @"\s+", "");
+            const string regPattern = "^[A-Z]{2}[ -][0-9]{1,2}(?: [A-Z])?(?: [A-Z]*)? [0-9]{4}$";
+            bool isRegistrationvalid = Regex.IsMatch(regnNumber, regPattern);
+            if (isRegistrationvalid == false)
+            {
+                Console.WriteLine("Invalid registration, Please re-enter in format MP09CN0492");
+                regnNumber = Console.ReadLine();
+            }
+            Console.WriteLine("Preferred date and time (dd/mm/yyyy hh:mm)");
+            bool isvalidDate = DateTime.TryParse(Console.ReadLine(), out requestedDatetime);
+            bool isTimeSlotAvailable = false;
+            if (isvalidDate == true)
+            {
+                isTimeSlotAvailable = checkServicePlan(requestedDatetime);
+            }
+            DateTime nextAvailableDateTime = default;
+            if (isvalidDate == false || isTimeSlotAvailable == false)
+            {
+                nextAvailableDateTime = suggestNextAvailableSlot();
+            }
+            return isvalidDate ? requestedDatetime : nextAvailableDateTime;
+        }
+
+        private static bool checkServicePlan(DateTime requestedDatetime)
+        {
+            //Todo: logic for checking the availability
+            return true;
+        }
+
+        private static DateTime suggestNextAvailableSlot()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateTime concatDateTime(string date, string time)
+        {
+            return new DateTime(DateTime.Today.Year, DateTime.Today.Month, int.Parse(date));
+
+        }
     }
 }
