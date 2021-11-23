@@ -4,7 +4,7 @@ namespace carserveprime.console
 {
     public class CustomerInteractor
     {
-        public DateTime interactsWithCustomer()
+        public DateTime asksForPreferredServiceSlot()
         {
             Console.WriteLine("Welcome to Car Serve Prime");
             Console.WriteLine("Can we have car registration number");

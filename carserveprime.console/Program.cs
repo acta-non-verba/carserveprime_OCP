@@ -5,18 +5,18 @@ using CarServePrime.Core.Entity;
 
 namespace carserveprime.console
 {
-    
+
 
     class Program
     {
         static void Main(string[] args)
         {
+            ServiceSlot slot = new ServiceSlot();
+            CustomerInteractor serviceRepresentative = new CustomerInteractor();
+            DateTime proposedDatetime;
 
-            ServiceSlot requestedTimeSlot = new ServiceSlot();
-            CustomerInteractor serviceRepresentative=new CustomerInteractor();
-            
-            requestedTimeSlot.SlotDateTime = serviceRepresentative.interactsWithCustomer();
-            DateTime proposedDatetime = requestedTimeSlot.available() ? requestedTimeSlot.SlotDateTime : requestedTimeSlot.availableNext();
+            slot.SlotDateTime = serviceRepresentative.asksForPreferredServiceSlot();
+            proposedDatetime = slot.available() ? slot.SlotDateTime : slot.availableNext();
             serviceRepresentative.informsAvailableServiceSlot(proposedDatetime);
         }
 
