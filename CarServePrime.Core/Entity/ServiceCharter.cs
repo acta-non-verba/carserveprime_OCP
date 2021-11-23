@@ -5,6 +5,7 @@ namespace CarServePrime.Core.Entity
 {
     public class ServiceCharter
     {
+        //Todo: replace Datetime collection with custom ServiceSlot collection.
         public ServiceCharter()
         {
             this.UpcomingServiceSlots=new List<DateTime>
