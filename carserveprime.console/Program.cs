@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace carserveprime.console
 {
@@ -78,7 +79,7 @@ namespace carserveprime.console
             if (finalConfirmation.ToLower() == "y")
             {
                 Console.WriteLine("Appointment is confirmed on " + proposedDatetime);
-                //save the appointment                
+                communicateServiceAppointment(proposedDatetime.ToShortTimeString(),proposedDatetime);               
             }
         }
 
@@ -125,7 +126,18 @@ namespace carserveprime.console
         private static DateTime concatDateTime(string date, string time)
         {
             return new DateTime(DateTime.Today.Year, DateTime.Today.Month, int.Parse(date));
-
+        }
+        
+        private static void communicateServiceAppointment(string timeOfServiceDay, DateTime dateOfService)
+        {
+            SmtpClient mailClient = new SmtpClient();
+            MailAddress fromEmail = new MailAddress("service@carserveprime.com");
+            MailAddress toEmail = new MailAddress("customer@customerdomain.com");
+            MailMessage message = new MailMessage(fromEmail, toEmail);
+            message.Body = @"Thank you for providing the information, your appointment information fixed as below /n" +
+                            dateOfService.ToShortDateString() + " " + timeOfServiceDay + " PM";
+            message.Subject = "Service apointment at carserverprime";
+            mailClient.Send(message);
         }
     }
 }
