@@ -1,8 +1,6 @@
-# carserveprime
+UseCase (User Story):- As a service center owner, I want to scale my business to improve financials of the company. 
 
-1.As a car owner, I want to schedule a service for my vehicle on requested date and time using a service order interface.
-If the requested service slot is not available then you should tell me which next slot is available.
+I have below plans to offer our services at premium rates.
 
-
-
-
+1. Customer can book weekend service slots by paying 20% premium.
+2. Customer can book evening & night service slots by paying 50% premium.
