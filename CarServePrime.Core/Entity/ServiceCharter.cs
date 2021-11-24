@@ -8,35 +8,63 @@ namespace CarServePrime.Core.Entity
         //Todo: replace Datetime collection with custom ServiceSlot collection.
         public ServiceCharter()
         {
-            this.UpcomingServiceSlots=new List<DateTime>
-            {
-               DateTime.Today.AddHours(10), DateTime.Today.AddHours(10).AddMinutes(30),
-               DateTime.Today.AddHours(11), DateTime.Today.AddHours(10).AddMinutes(30),
-               DateTime.Today.AddHours(12), DateTime.Today.AddHours(10).AddMinutes(30),
-               DateTime.Today.AddHours(13), DateTime.Today.AddHours(10).AddMinutes(30),
-               DateTime.Today.AddHours(14),
-               DateTime.Today.AddDays(1).AddHours(10), DateTime.Today.AddDays(1).AddHours(10).AddMinutes(30),
-               DateTime.Today.AddDays(1).AddHours(11), DateTime.Today.AddDays(1).AddHours(11).AddMinutes(30),
-               DateTime.Today.AddDays(1).AddHours(12), DateTime.Today.AddDays(1).AddHours(12).AddMinutes(30),
-               DateTime.Today.AddDays(1).AddHours(13), DateTime.Today.AddDays(1).AddHours(13).AddMinutes(30),
-               DateTime.Today.AddDays(1).AddHours(14),
-               DateTime.Today.AddDays(2).AddHours(10), DateTime.Today.AddDays(2).AddHours(10).AddMinutes(30),
-               DateTime.Today.AddDays(2).AddHours(11), DateTime.Today.AddDays(2).AddHours(11).AddMinutes(30),
-               DateTime.Today.AddDays(2).AddHours(12), DateTime.Today.AddDays(2).AddHours(12).AddMinutes(30),
-               DateTime.Today.AddDays(2).AddHours(13), DateTime.Today.AddDays(2).AddHours(13).AddMinutes(30),
-               DateTime.Today.AddDays(2).AddHours(14),
-               DateTime.Today.AddDays(3).AddHours(10), DateTime.Today.AddDays(3).AddHours(10).AddMinutes(30),
-               DateTime.Today.AddDays(3).AddHours(11), DateTime.Today.AddDays(3).AddHours(11).AddMinutes(30),
-               DateTime.Today.AddDays(3).AddHours(12), DateTime.Today.AddDays(3).AddHours(12).AddMinutes(30),
-               DateTime.Today.AddDays(3).AddHours(13), DateTime.Today.AddDays(3).AddHours(13).AddMinutes(30),
-               DateTime.Today.AddDays(3).AddHours(14),
-               DateTime.Today.AddDays(4).AddHours(10), DateTime.Today.AddDays(4).AddHours(10).AddMinutes(30),
-               DateTime.Today.AddDays(4).AddHours(11), DateTime.Today.AddDays(4).AddHours(11).AddMinutes(30),
-               DateTime.Today.AddDays(4).AddHours(12), DateTime.Today.AddDays(4).AddHours(12).AddMinutes(30),
-               DateTime.Today.AddDays(4).AddHours(13), DateTime.Today.AddDays(4).AddHours(13).AddMinutes(30),
-               DateTime.Today.AddDays(4).AddHours(14)
+            this.UpcomingServiceSlots = new List<ServiceSlot>{
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,10,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,10,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,11,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,11,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,12,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,12,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,13,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,13,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,14,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day,14,30,0)},
+
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,10,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,10,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,11,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,11,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,12,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,12,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,13,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,13,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,14,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(1).Day,14,30,0)},
+
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,10,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,10,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,11,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,11,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,12,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,12,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,13,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,13,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,14,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(2).Day,14,30,0)},
+
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,10,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,10,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,11,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,11,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,12,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,12,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,13,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,13,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,14,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(3).Day,14,30,0)},
+
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,10,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,10,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,11,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,11,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,12,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,12,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,13,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,13,30,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,14,0,0)},
+                new ServiceSlot{SlotDateTime=new DateTime(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.AddDays(4).Day,14,30,0)}
             };
-            this.BookedServiceSlots=new List<Service>
+            this.BookedServices = new List<Service>
             {
 
                new Service{ ServiceAppointment = UpcomingServiceSlots[0], CarRegistration = "KL08CN7897" }, new Service{ ServiceAppointment = UpcomingServiceSlots[1], CarRegistration = "MP04TY2343" },
@@ -64,7 +92,7 @@ namespace CarServePrime.Core.Entity
                new Service{ ServiceAppointment = UpcomingServiceSlots[44], CarRegistration = "JH05CY7897" }
             };
         }
-        public List<DateTime> UpcomingServiceSlots{ get; set; }    
-        public List<Service> BookedServiceSlots{ get; set; }    
+        public List<ServiceSlot> UpcomingServiceSlots { get; set; }
+        public List<Service> BookedServices { get; set; }
     }
 }

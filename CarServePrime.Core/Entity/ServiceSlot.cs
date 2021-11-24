@@ -10,13 +10,15 @@ namespace CarServePrime.Core.Entity
         public bool available()
         {
             ServiceCharter serviceCharter = new ServiceCharter();
-            List<Service> currentServiceCharter = serviceCharter.BookedServiceSlots;
-            return currentServiceCharter.Any(x => x.ServiceAppointment == SlotDateTime && SlotDateTime != DateTime.MinValue);
+            List<Service> currentServiceCharter = serviceCharter.BookedServices;
+            return currentServiceCharter.Any(x => x.ServiceAppointment.SlotDateTime == SlotDateTime && SlotDateTime != DateTime.MinValue);
         }
 
-        public DateTime availableNext()
+        public ServiceSlot availableNext()
         {
-            return DateTime.Today.AddDays(12).AddHours(14).AddMinutes(30);
+            ServiceSlot nextSlot=new ServiceSlot();
+            nextSlot.SlotDateTime=DateTime.Today.AddDays(12).AddHours(14).AddMinutes(30);
+            return nextSlot;
         }
     }
 }

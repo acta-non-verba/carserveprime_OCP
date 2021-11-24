@@ -11,15 +11,19 @@ namespace carserveprime.console
     {
         static void Main(string[] args)
         {
-            ServiceSlot slot = new ServiceSlot();
+            ServiceSlot requestedSlot = new ServiceSlot();
+            ServiceSlot proposedSlot = new ServiceSlot();
             CustomerInteractor serviceRepresentative = new CustomerInteractor();
-            DateTime proposedDatetime;
 
-            slot.SlotDateTime = serviceRepresentative.asksForPreferredServiceSlot();
-            proposedDatetime = slot.available() ? slot.SlotDateTime : slot.availableNext();
-            serviceRepresentative.informsAvailableServiceSlot(proposedDatetime);
+            requestedSlot.SlotDateTime = serviceRepresentative.asksForPreferredServiceSlot();
+            proposedSlot = serviceRepresentative.checksSlotAvailability(requestedSlot);
+            serviceRepresentative.proposesSlot(proposedSlot);
+            bool confirmation=serviceRepresentative.collectsServiceSlotConfirmation();
+            if(confirmation==false) {serviceRepresentative.advisesVisit();return;}
+            serviceRepresentative.registersServiceSlot(proposedSlot);
         }
 
+        
     }
 }
 
