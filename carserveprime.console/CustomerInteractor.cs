@@ -28,6 +28,7 @@ namespace carserveprime.console
             ServiceCharter charter=new ServiceCharter();
             charter.BookedServices.Add(serviceToBook);
             Console.WriteLine("\n Service Appointment confirmed on "+confirmedSlot.SlotDateTime);
+            EmailSender.communicateServiceAppointment(confirmedSlot.SlotDateTime.ToShortTimeString(),confirmedSlot.SlotDateTime);
         }
 
         public void advisesVisit()
