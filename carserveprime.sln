@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "carserveprime.console", "carserveprime.console\carserveprime.console.csproj", "{F49A781E-9EAA-429C-BED1-00D50EF5BBEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServePrime.Core", "CarServePrime.Core\CarServePrime.Core.Csproj", "{8F56EBF5-251C-405E-836F-3D57350AF73B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{F49A781E-9EAA-429C-BED1-00D50EF5BBEE}.Release|x64.Build.0 = Release|Any CPU
 		{F49A781E-9EAA-429C-BED1-00D50EF5BBEE}.Release|x86.ActiveCfg = Release|Any CPU
 		{F49A781E-9EAA-429C-BED1-00D50EF5BBEE}.Release|x86.Build.0 = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|x64.Build.0 = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F56EBF5-251C-405E-836F-3D57350AF73B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
