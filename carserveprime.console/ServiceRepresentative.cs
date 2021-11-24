@@ -3,7 +3,7 @@ using CarServePrime.Core.Entity;
 
 namespace carserveprime.console
 {
-    public class CustomerInteractor
+    public class ServiceRepresentative
     {
         public Car carToBeServiced { get; set; }
         public DateTime asksForPreferredServiceSlot()

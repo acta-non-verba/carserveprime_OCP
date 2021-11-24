@@ -11,7 +11,7 @@ namespace carserveprime.console
         {
             ServiceSlot requestedSlot = new ServiceSlot();
             ServiceSlot proposedSlot = new ServiceSlot();
-            CustomerInteractor serviceRepresentative = new CustomerInteractor();
+            ServiceRepresentative serviceRepresentative = new ServiceRepresentative();
 
             requestedSlot.SlotDateTime = serviceRepresentative.asksForPreferredServiceSlot();
             proposedSlot = serviceRepresentative.checksSlotAvailability(requestedSlot);
